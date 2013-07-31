@@ -2,6 +2,10 @@
 
 
 import time
+import operator
+
+#memoization
+cache = {}
 
 
 def generate_next(n):
@@ -13,24 +17,24 @@ def generate_next(n):
 
 def count_sequence(n):
     count = 0
+    start = n
     while generate_next(n) != 1:
+        if n in cache:
+            count += cache[n]
+            break
         n = generate_next(n)
         count += 1
+    cache[start] = count
     return count
 
-    
+
 def solve():
-    length = 0
-    result = 0
-    for i in xrange(1, 1000000):
-        tmp = count_sequence(i)
-        if tmp > length:
-        	length, result = tmp, i
-    return result
+    max_index, max_value = max(enumerate((count_sequence(i) for i in xrange(1, 1000001)), start=1), key=operator.itemgetter(1))
+    return max_index
 
 
 if __name__ == "__main__":
     start_time = time.time()
-    print solve()
+    print "Result: {0}".format(solve())
     elapsed_time = (time.time() - start_time)
     print "Found solution in {0}s".format(elapsed_time)
