@@ -5,9 +5,10 @@ import math
 
 
 def lattice(n):
-	return binomialCoefficient(n + n, n)
+	return binomial_coefficient(n + n, n)
 
-def binomialCoefficient(a, b):
+
+def binomial_coefficient(a, b):
 	return math.factorial(a)/(math.factorial(a - b)*math.factorial(b))
 
 

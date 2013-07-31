@@ -3,24 +3,24 @@
 
 import time
 
-        
-def numberOfDivisor(n):
-    return len(sum([[x, (n/x)] for x in xrange(1, (int((n**0.5) + 1))) if not (n%x)], []))
+
+def number_of_divisor(n):
+    return len(sum([[x, (n / x)] for x in xrange(1, (int((n ** 0.5) + 1))) if not (n % x)], []))
+
 
 def solver(n):
     x = 2
-    while numberOfDivisor(genTriangle(x)) < n:
+    while number_of_divisor(gen_triangle(x)) < n:
         x += 1
-    return genTriangle(x)
+    return gen_triangle(x)
 
-def genTriangle(n):
-    return ((n*(n+1))/2)
 
-        
+def gen_triangle(n):
+    return ((n * (n + 1)) / 2)
+
+
 if __name__ == "__main__":
-	startTime = time.time()
-	print solver(500)
-	elapsedTime = time.time() - startTime
-	print "Elapsed time: {0}".format(elapsedTime)
-
-
+    start_time = time.time()
+    print solver(500)
+    elapsed_time = time.time() - start_time
+    print "Elapsed time: {0}".format(elapsed_time)
