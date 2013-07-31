@@ -6,13 +6,13 @@ import calendar
 
 
 def solve():
-	count = 0
-	for year in xrange(1901, 2001):
-		for month in xrange(1, 13):
-			day = calendar.weekday(year, month, 1)
-			if day == 6:
-				count += 1
-	return count
+    count = 0
+    for year in xrange(1901, 2001):
+    	for month in xrange(1, 13):
+    		first_day = calendar.weekday(year, month, 1)
+    		if first_day == 6:
+    			count += 1
+    return count
 
 
 if __name__ == '__main__':
