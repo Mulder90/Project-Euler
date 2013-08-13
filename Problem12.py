@@ -5,7 +5,7 @@ import time
 
 
 def number_of_divisor(n):
-    return len(sum([[x, (n / x)] for x in xrange(1, (int((n ** 0.5) + 1))) if not (n % x)], []))
+    return len(sum([[x, (n // x)] for x in range(1, (int((n ** 0.5) + 1))) if not (n % x)], []))
 
 
 def solver(n):
@@ -16,11 +16,11 @@ def solver(n):
 
 
 def gen_triangle(n):
-    return ((n * (n + 1)) / 2)
+    return ((n * (n + 1)) // 2)
 
 
 if __name__ == "__main__":
     start_time = time.time()
-    print solver(500)
+    print(solver(500))
     elapsed_time = time.time() - start_time
-    print "Elapsed time: {0}".format(elapsed_time)
+    print("Elapsed time: {time}".format(time=elapsed_time))

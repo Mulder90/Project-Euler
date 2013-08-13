@@ -10,4 +10,4 @@ def factorial(n):
 
 
 if __name__ == "__main__":
-    print sum(int(x) for x in str(factorial(100)))
+    print(sum(int(x) for x in str(factorial(100))))

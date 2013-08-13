@@ -8,8 +8,8 @@ def fibonacci():
         if(len(str(a))) == 1000:
             return (a, count)
         count += 1
-        a, b = b, a+b
+        a, b = b, a + b
 
 
 if __name__ == "__main__":
-    print fibonacci()           
+    print(fibonacci())
