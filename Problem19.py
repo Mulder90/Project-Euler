@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 
-import time
+import utils
 import calendar
 
-
+@utils.timeit
 def solve():
     count = 0
     for year in range(1901, 2001):
@@ -16,7 +16,4 @@ def solve():
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    print("Result: {0}".format(solve()))
-    elapsed_time = time.time() - start_time
-    print("Time elapsed: {0}".format(elapsed_time))
+    print("Result: {result}".format(result=solve()))

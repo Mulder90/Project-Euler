@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
+import utils
 
+@utils.timeit
 def factorial(n):
     result = 1
     while n != 1:
@@ -10,4 +12,4 @@ def factorial(n):
 
 
 if __name__ == "__main__":
-    print(sum(int(x) for x in str(factorial(100))))
+    print("Result: {result}".format(result=sum(int(x) for x in str(factorial(100)))))

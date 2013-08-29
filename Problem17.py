@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-import time
+import utils
 
 
 number_to_word = {
@@ -10,7 +10,7 @@ number_to_word = {
     30: 'thirty', 40: 'forty', 50: 'fifty', 60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety', 100: 'hundred', 1000: 'thousand'
     }
 
-
+@utils.timeit
 def solve():
     return sum(sum_of_word(x) for x in range(1, 1001))
 
@@ -41,7 +41,4 @@ def sum_of_word(n):
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    print(solve())
-    elapsed_time = time.time() - start_time
-    print("Time: {0}".format(elapsed_time))
+    print("Result: {result}".format(result=solve()))

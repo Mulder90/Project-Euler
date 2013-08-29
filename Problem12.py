@@ -1,13 +1,13 @@
 #!/usr/bin/python
 
 
-import time
+import utils
 
 
 def number_of_divisor(n):
     return len(sum([[x, (n // x)] for x in range(1, (int((n ** 0.5) + 1))) if not (n % x)], []))
 
-
+@utils.timeit
 def solver(n):
     x = 2
     while number_of_divisor(gen_triangle(x)) < n:
@@ -20,7 +20,4 @@ def gen_triangle(n):
 
 
 if __name__ == "__main__":
-    start_time = time.time()
-    print(solver(500))
-    elapsed_time = time.time() - start_time
-    print("Elapsed time: {time}".format(time=elapsed_time))
+    print("Result: {result}".format(result=solver(500)))

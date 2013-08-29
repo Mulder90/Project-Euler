@@ -2,14 +2,14 @@
 
 
 import itertools
-import time
+import utils
 import math
-
 
 def digits(n):
     return sorted(str(n))
 
 
+@utils.timeit
 def solve():
     for i in itertools.count(1):
         len_number_i = int(math.log10(i)) + 1
@@ -23,7 +23,4 @@ def solve():
 
 
 if __name__ == '__main__':
-    start_time = time.time()
     print("Result: {result}".format(result=solve()))
-    elapsed_time = time.time() - start_time
-    print("Elapsed time: {time}".format(time=elapsed_time))

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-import time
+import utils
 
 
 factoradic = {}
@@ -16,7 +16,7 @@ def gen_factoradic(n, k):
             index //= i
         factoradic[pos] = factoradic_i[::-1]
 
-
+@utils.timeit
 def solve():
     digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     gen_factoradic(1000000, len(digits))
@@ -25,7 +25,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    start_time = time.time()
-    print("Result: {0}".format(solve()))
-    elapsed_time = (time.time() - start_time)
-    print("Found solution in {0}s".format(elapsed_time))
+    print("Result: {result}".format(result=solve()))

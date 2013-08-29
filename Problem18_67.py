@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 
-import time
+import utils
 
 
 """To solve problem 18 you must change 'trinagle.txt' with 'problem18.txt'"""
 
-
+@utils.timeit
 def solve():
     with open("triangle.txt") as triangle:
         numbers = [[int(c) for c in line.split(" ")] for line in triangle]
@@ -17,7 +17,4 @@ def solve():
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    print("Result: {0}".format(solve()))
-    elapsed_time = time.time() - start_time
-    print("Elapsed time: {0}".format(elapsed_time))
+    print("Result: {result}".format(result=solve()))

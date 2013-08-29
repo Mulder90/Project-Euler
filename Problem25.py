@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
+import utils
 
+
+@utils.timeit
 def fibonacci():
     a, b = 0, 1
     count = 0
@@ -12,4 +15,4 @@ def fibonacci():
 
 
 if __name__ == "__main__":
-    print(fibonacci())
+    print("Result: {result}".format(result=fibonacci()))

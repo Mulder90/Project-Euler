@@ -2,7 +2,7 @@
 
 
 import string
-import time
+import utils
 
 
 def create_ascii_dictionary():
@@ -13,7 +13,7 @@ def create_ascii_dictionary():
 
 d = create_ascii_dictionary()
 
-
+@utils.timeit
 def solve():
     with open("names.txt") as names:
         list_of_names = sorted([name[1:-1] for name in names.read().split(',')])
@@ -25,7 +25,4 @@ def solve():
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    print("Result: {0}".format(solve()))
-    elapsed_time = time.time() - start_time
-    print("Elapsed time: {0}".format(elapsed_time))
+    print("Result: {result}".format(result=solve()))
