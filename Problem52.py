@@ -12,13 +12,14 @@ def digits(n):
 
 def solve():
     for i in itertools.count(1):
-        len_number = int(math.log10(i)) + 1
-        if len_number == int(math.log10(i * 6)) + 1:
+        len_number_i = int(math.log10(i)) + 1
+        if len_number_i == int(math.log10(i * 6)) + 1:
             values = [digits(i * j) for j in range(2, 7)]
-            if all([digits(i) == value for value in values]):
+            digit_i = digits(i)
+            if all([digit_i == value for value in values]):
                 return i
         else:
-            i = int(str('1' + ('0' * len_number)))
+            i = int(str('1' + ('0' * len_number_i)))
 
 
 if __name__ == '__main__':
