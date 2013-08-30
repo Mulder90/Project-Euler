@@ -6,6 +6,7 @@ import utils
 
 """To solve problem 18 you must change 'trinagle.txt' with 'problem18.txt'"""
 
+
 @utils.timeit
 def solve():
     with open("triangle.txt") as triangle:

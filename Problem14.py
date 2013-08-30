@@ -27,6 +27,7 @@ def count_sequence(n):
     cache[start] = count
     return count
 
+
 @utils.timeit
 def solve():
     max_index, max_value = max(enumerate((count_sequence(

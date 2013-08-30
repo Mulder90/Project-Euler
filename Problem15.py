@@ -4,6 +4,7 @@
 import math
 import utils
 
+
 @utils.timeit
 def lattice(n):
     return binomial_coefficient(n + n, n)
@@ -14,4 +15,4 @@ def binomial_coefficient(a, b):
 
 
 if __name__ == '__main__':
-   print("Result: {result}".format(result=lattice(20)))
+    print("Result: {result}".format(result=lattice(20)))

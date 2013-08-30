@@ -3,6 +3,7 @@
 
 import utils
 
+
 @utils.timeit
 def solve():
     return str(sum(int(x) for x in open("problem13.txt", "r")))[0:10]

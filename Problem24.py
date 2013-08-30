@@ -16,6 +16,7 @@ def gen_factoradic(n, k):
             index //= i
         factoradic[pos] = factoradic_i[::-1]
 
+
 @utils.timeit
 def solve():
     digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

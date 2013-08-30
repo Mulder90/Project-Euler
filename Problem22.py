@@ -13,10 +13,12 @@ def create_ascii_dictionary():
 
 d = create_ascii_dictionary()
 
+
 @utils.timeit
 def solve():
     with open("names.txt") as names:
-        list_of_names = sorted([name[1:-1] for name in names.read().split(',')])
+        list_of_names = sorted([name[1:-1]
+                               for name in names.read().split(',')])
         i = 0
         for name in list_of_names:
             list_of_names[i] = sum(d[c] for c in name) * (i + 1)

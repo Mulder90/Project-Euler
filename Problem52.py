@@ -5,6 +5,7 @@ import itertools
 import utils
 import math
 
+
 def digits(n):
     return sorted(str(n))
 
